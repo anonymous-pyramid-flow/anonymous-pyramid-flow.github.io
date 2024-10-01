@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Pyramidal Flow Matching for Efficient Video Generative Modeling">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pyramid Flow</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Pyramidal Flow Matching for Efficient Video Generative Modeling</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="#">Anonymous Authors</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Anonymous Institute</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code will be available</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href="#"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    🤗
+                  </span>
+                  <span>Model will be available</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-centered has-text-centered">Qualitative Results</h2>
+    <h3 class="is-centered has-text-centered is-size-5">Text-to-Video Generation (1280x768, 10s, 24fps)</h3>
+    <div class="results-carousel">
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">Beautiful, snowy Tokyo city is bustling. The camera moves through the bustling city street, following several people enjoying the beautiful snowy weather and shopping at nearby stalls</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v_10s/tokyo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">At dusk, a car is driving on the highway, with the rearview mirror reflecting a colorful sunset and serene scenery<br>&nbsp;</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v_10s/dusk.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">Extreme close-up of chicken and green pepper kebabs grilling on a barbeque with flames. Shallow focus and light smoke. vivid colours</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v_10s/chicken.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">A side profile shot of a woman with fireworks exploding in the distance beyond her</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v_10s/fireworks.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <h3 class="is-centered has-text-centered is-size-5">Text-to-Video Generation (1280x768, 5s, 24fps)</h3>
+    <div class="results-carousel">
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">A movie trailer featuring the adventures of the 30 year old space man wearing a red wool knitted motorcycle helmet, blue sky, salt desert, cinematic style, shot on 35mm film, vivid colors</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v/trailer.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">A boat sailing leisurely along the Seine River with the Eiffel Tower in background, black and white<br>&nbsp;</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v/eiffel.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">Extreme close-up of chicken and green pepper kebabs grilling on a barbeque with flames. Shallow focus and light smoke. vivid colours</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v/chicken.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">A cat waking up its sleeping owner demanding breakfast<br>&nbsp;</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v/waking.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">A drone camera circles around a beautiful historic church built on a rocky outcropping along the Amalfi Coast, the view showcases historic and magnificent architectural details and tiered pathways and patios</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v/church.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">Drone view of waves crashing against the rugged cliffs along Big Sur’s garay point beach. The crashing blue waters create white-tipped waves, while the golden light of the setting sun illuminates the rocky shore</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v/waves.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">An aerial shot of a lighthouse standing tall on a rocky cliff, its beacon cutting through the early dawn, waves crash against the rocks below<br>&nbsp;</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v/lighthouse.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">Churning ocean waves at night with a lighthouse on the coast create an intense and somewhat foreboding atmosphere. The scene is set under an overcast sky, with the ocean’s dark waters illuminated by natural light</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v/churning.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">A tsunami coming through an alley in Bulgaria, dynamic movement</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v/tsunami.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">A massive explosion on the surface of the earth</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v/explosion.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">A campfire burning with flames and embers, gradually increasing in size and intensity before dying down towards the end</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v/campfire.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">A series of underwater explosions, creating bubbles and splashing water<br>&nbsp;</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v/water.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">Beautiful, snowy Tokyo city is bustling. The camera moves through the bustling city street, following several people enjoying the beautiful snowy weather and shopping at nearby stalls</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v/tokyo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">A side profile shot of a woman with fireworks exploding in the distance beyond her<br>&nbsp;</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v/fireworks.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">Two hikers make their way up a mountain, taking in the fresh air and beautiful views<br>&nbsp;</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v/hikers.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">A stunning sight as a steam train leaves the bridge, traveling over the arch-covered viaduct. The landscape is dotted with lush greenery and rocky mountains. The sky is blue and the sun is shining.</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/t2v/rail.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <br>
+    <h3 class="is-centered has-text-centered is-size-5">Text-conditioned Image-to-Video Generation (1280x768, 5s, 24fps)</h3>
+    <div class="results-carousel">
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">Monster Illustration in flat design style of a diverse family of monsters. The group includes a furry brown monster...</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/i2v/monster.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">A car driving on the road<br>&nbsp;</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/i2v/car.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">FPV flying over the Great Wall<br>&nbsp;</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/i2v/wall.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="text-align: center; width: 48.5%; display:inline-block">
+        <div class="item-prompt">People strolling through the trees of a small suburban park on an island in the river on an ordinary Sunday</div>
+        <video poster="" autoplay muted loop playsinline>
+          <source src="./static/videos/i2v/sunday.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--<section class="section">-->
+<!--  <div class="container is-max-desktop">-->
+<!--<h2 class="title is-centered has-text-centered">Quantitative Results</h2>-->
+<!--<h3 class="is-centered has-text-centered is-size-5">VBench (<a href="https://arxiv.org/abs/2311.17982">Huang et al., 2024</a>)</h3>-->
+<!--<figure>-->
+<!--  <img src="./static/images/vbench.jpg" alt="VBench performance">-->
+<!--</figure>-->
+<!--<br>-->
+<!--<h3 class="is-centered has-text-centered is-size-5">EvalCrafter (<a href="https://arxiv.org/abs/2310.11440">Liu et al., 2024</a>)</h3>-->
+<!--<figure>-->
+<!--  <img src="./static/images/evalcrafter.jpg" alt="EvalCrafter performance">-->
+<!--</figure>-->
+<!--  </div>-->
+<!--</section>-->
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website template credit to <a href="https://nerfies.github.io/">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
